@@ -1,0 +1,93 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: #ADD8E6; /* Light Blue background */
+    color: #000080; /* Navy text color */
+    font-family: Arial, sans-serif; /* Font for the page */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Main container for search box and results */
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Box */
+.search-box {
+    margin-bottom: 20px;
+}
+
+.search-box input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #000080;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    outline: none;
+}
+
+.search-box input[type="text"]:focus {
+    border-color: #1E3A8A; /* Slightly darker blue on focus */
+}
+
+/* Search Button */
+.search-box button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000080; /* Navy background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.search-box button:hover {
+    background-color: #1E3A8A;
+}
+
+/* Results Section */
+.results {
+    margin-top: 20px;
+}
+
+.results ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.results li {
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* RDF Section */
+.rdf-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #000080;
+    border-radius: 10px;
+    max-width: 90%;
+    word-wrap: break-word;
+}

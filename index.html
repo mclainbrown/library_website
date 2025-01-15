@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kpop Dictionary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Kpop Artist Search</h1>
+
+        <!-- Search Form -->
+        <div class="search-box">
+            <form action="/" method="POST">
+                <input type="text" name="search" placeholder="Search for an artist..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Only display search results if search has been performed -->
+        {% if search_results is not none %}
+            {% if not is_empty %}
+                <div class="results">
+                    <h2>Search Results</h2>
+                    <ul>
+                        {% for artist in search_results.itertuples() %}
+                            <li>{{ artist.artist }} ({{ artist.debut_year }}) - {{ artist.company }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% elif is_empty %}
+                <p>No results found. Try a different search.</p>
+            {% endif %}
+        {% endif %}
+
+        <!-- Display RDF data if available -->
+        {% if artist_rdf %}
+            <div class="rdf-section">
+                <h3>Artist RDF Data</h3>
+                <pre>{{ artist_rdf }}</pre>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
